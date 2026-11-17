@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#100b2d">
+<title>Tiu's Princess Kingdom ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--bg:#100b2d;--pink:#f7b5d4;--hot:#f06cb5;--cream:#fff5e9;--gold:#f8d98d;--lav:#cbb7ff;--ink:#342044}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:'DM Sans',sans-serif;color:#fff}body{background:radial-gradient(ellipse at 50% 20%,#28205b 0,#17113e 48%,#0d0926 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.85;background-image:radial-gradient(1px 1px at 12% 17%,#fff 60%,transparent),radial-gradient(1.5px 1.5px at 70% 22%,#ffe9ae 60%,transparent),radial-gradient(1px 1px at 88% 66%,#fff 60%,transparent),radial-gradient(1px 1px at 32% 78%,#fff 60%,transparent);background-size:130px 150px,190px 170px,220px 190px,170px 220px;z-index:0}
+#app{position:relative;z-index:1;min-height:100svh}.screen{display:none;min-height:100svh;padding:42px 18px 34px;align-items:center;justify-content:center;text-align:center;animation:fade .55s ease both}.screen.active{display:flex}@keyframes fade{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.inner{width:min(100%,570px);margin:auto}.script{font:600 clamp(2.1rem,7vw,3.4rem)/.98 'Caveat',cursive;color:var(--pink);text-shadow:0 3px 20px #ed72b555;margin:8px 0 14px}.serif{font-family:'Playfair Display',serif}.sub{color:#d6cbed;font-size:.88rem;line-height:1.65;margin:10px auto 20px;max-width:460px}.tiny{font-size:.72rem;color:#b8a9d7;line-height:1.5}.moon{position:fixed;right:9%;top:7%;font-size:2.3rem;color:#fff1bf;filter:drop-shadow(0 0 12px #fff0ae);z-index:-1}.crown{color:var(--gold)}.btn{border:1px solid #ffb9dd88;background:linear-gradient(110deg,#f5a9d0,#d6a8ff);color:#2b1744;padding:12px 23px;border-radius:999px;font-weight:700;font-size:.83rem;cursor:pointer;box-shadow:0 7px 22px #08051d88;transition:.2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.07)}.btn:disabled{opacity:.38;cursor:not-allowed;transform:none}.btn.secondary{background:#ffffff0c;color:#fbe9fa;border:1px solid #ffffff45;box-shadow:none}.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px auto 13px}.reason{background:linear-gradient(150deg,#fff4e8,#ffe8f2);border:1px solid #ffdfeb;border-radius:13px;min-height:116px;padding:12px 9px;color:#533a5c;box-shadow:0 7px 18px #05031c55;cursor:pointer;transition:.22s;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px}.reason:hover{transform:translateY(-4px) rotate(-1deg)}.reason.open{background:linear-gradient(150deg,#ffe3f0,#f7dfff);border-color:#ffc0e3}.reason .emoji{font-size:1.35rem}.reason b{font:700 .79rem 'DM Sans';letter-spacing:.02em}.reason small{font-size:.65rem;line-height:1.35;color:#765d7d}.reason .reveal{font:500 .68rem/1.4 'DM Sans';color:#6c4b72}
+.count{font-size:.75rem;color:#f7d8eb;margin:8px}.progress{height:5px;border-radius:9px;background:#ffffff24;width:min(260px,80%);margin:0 auto 12px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,#f7a6d0,#c9a8ff);width:0;transition:width .3s}
+.castle-img{width:min(100%,440px);max-height:220px;object-fit:cover;border-radius:16px;opacity:.98;box-shadow:0 10px 38px #07051b99;margin:8px auto 10px;border:1px solid #ffffff25}.letter{background:linear-gradient(145deg,#fff8ec,#ffeaf2);color:#513c5d;border:5px solid #f2b3d2;outline:1px solid #fff3e6;box-shadow:0 15px 35px #05031c88;border-radius:9px;padding:24px 22px 19px;margin:18px auto 0;max-width:490px;text-align:left;position:relative}.letter:before{content:"";position:absolute;inset:7px;border:1px dotted #e9a7c9;pointer-events:none}.letter h3{font:600 1.75rem 'Caveat';text-align:center;color:#a95689;margin:0 0 12px}.letter p{font:500 1.02rem/1.65 'Caveat';font-size:1.22rem;margin:8px 0}.letter .sign{text-align:right;color:#a95689;font:600 1.45rem 'Caveat';margin-top:12px}
+.envelope{font-size:7rem;display:block;filter:drop-shadow(0 12px 18px #05031c88);animation:float 3s ease-in-out infinite;margin:8px}@keyframes float{50%{transform:translateY(-10px) rotate(2deg)}}.invitation{background:linear-gradient(145deg,#fff7e8,#ffebf2);color:#57405d;border:5px double #e9b4d0;border-radius:12px;padding:25px 22px;margin:14px auto;max-width:430px;box-shadow:0 12px 30px #06041b99}.invitation .seal{font-size:1.6rem;color:#bb6c9b}.invitation h2{font:600 1.8rem 'Playfair Display';color:#9e668e;margin:8px 0}.invitation p{font:500 1.05rem/1.65 'Caveat';font-size:1.3rem;margin:8px}
+.gift-art{width:min(100%,450px);max-height:235px;object-fit:cover;border-radius:18px;border:1px solid #ffffff33;box-shadow:0 15px 40px #07051b99;margin:8px auto}.promise-scene{font-size:4.6rem;line-height:1.1;margin:0 auto 4px;filter:drop-shadow(0 8px 12px #07051b88)}.promise-card{border:1px solid #d9b4ff88;background:linear-gradient(145deg,#ffffff13,#ffffff08);border-radius:17px;padding:18px 18px 15px;text-align:left;box-shadow:0 12px 35px #07051b66;margin:16px auto;max-width:500px}.promise-card p{font:500 1.13rem/1.5 'Caveat';color:#f8eaff;margin:0 0 14px}.task{display:flex;align-items:center;gap:10px;border-top:1px solid #ffffff20;padding:11px 2px;text-align:left;font-size:.83rem;color:#f8eafa;cursor:pointer}.task input{accent-color:#e98dc4;width:17px;height:17px}.task.done span{text-decoration:line-through;color:#c8b9d6}
+.final-img{width:min(100%,430px);max-height:255px;object-fit:cover;border-radius:18px;margin:14px auto;box-shadow:0 15px 45px #05031c99;border:1px solid #ffffff30}.sparkle{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:4}.particle{position:absolute;bottom:-35px;animation:rise 5s linear forwards}@keyframes rise{to{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+.royal{font:600 clamp(2.3rem,8vw,3.7rem)/.95 'Caveat';color:#f5c5e0;margin:13px 0;text-shadow:0 0 20px #ed86c655}
+@media(max-width:420px){.cards{gap:7px}.reason{min-height:108px;padding:9px 5px}.reason b{font-size:.72rem}.reason small{font-size:.6rem}.screen{padding:32px 13px 25px}.letter{padding:20px 16px}}
+</style></head>
+<body><div class="moon">☾</div><div class="sparkle" id="sparkle"></div><main id="app">
+<section class="screen active" id="p0"><div class="inner">
+<div class="script">Do You Know Why<br>You're So Special? ✨</div>
+<p class="sub">Tap each royal card to reveal its little secret.</p>
+<div class="cards" id="reasonCards">
+<button class="reason" data-msg="You make my ordinary days feel wonderfully beautiful."><span class="emoji">🌷</span><b>YOUR SMILE</b><small>It can make an ordinary day feel beautiful.</small></button>
+<button class="reason" data-msg="Your kindness is one of the prettiest things about you."><span class="emoji">💗</span><b>YOUR HEART</b><small>Your kindness is one of your prettiest qualities.</small></button>
+<button class="reason" data-msg="The way you think and see the world is uniquely yours."><span class="emoji">✨</span><b>YOUR VIBE</b><small>The way you think makes everything magical.</small></button>
+<button class="reason" data-msg="Your playful side makes every moment more fun."><span class="emoji">🦋</span><b>YOUR PLAYFULNESS</b><small>You make even simple moments fun.</small></button>
+<button class="reason" data-msg="Your strength inspires me more than you know."><span class="emoji">🌸</span><b>YOUR STRENGTH</b><small>You keep growing and glowing every day.</small></button>
+<button class="reason" data-msg="There's nobody else quite like you, Tiu."><span class="emoji">🐷</span><b>JUST YOU</b><small>Your little habits make you wonderfully you.</small></button>
+</div>
+<div class="progress"><span id="cardProgress"></span></div><div class="count" id="cardCount">0 of 6 royal secrets revealed</div>
+<button class="btn" id="unlockRoyal" disabled>Unlock My Royal Surprise ♡</button>
+</div></section>
+<section class="screen" id="p1"><div class="inner">
+<div class="script">A little royal kingdom…</div><img class="castle-img" src="castle-gift.png" alt="Tiu's magical pink princess kingdom">
+<div class="envelope">💌</div><p class="sub">A special invitation has arrived for Princess Tiu.</p>
+<button class="btn" onclick="go(2)">Open your invitation ♡</button>
+</div></section>
+<section class="screen" id="p2"><div class="inner">
+<div class="script">You Are Cordially Invited 👑</div>
+<div class="invitation"><div class="seal">♛</div><h2>ROYAL INVITATION</h2><p>By royal invitation, you are requested to enter this little kingdom, where every little detail has been made especially for you.</p><p>May your heart feel light, your smile shine bright, and your day be filled with magic.</p><div class="seal">♡ Tiu ♡</div></div>
+<button class="btn" onclick="go(3)">Enter Your Kingdom →</button>
+</div></section>
+<section class="screen" id="p3"><div class="inner">
+<div class="script">A Little Letter From<br>Your Biggest Admirer 💌</div>
+<div class="letter"><h3>Dear Princess Tiu,</h3><p id="typedLetter">Maybe I can't give you a real kingdom, but I hope I can create a world where you feel cherished, appreciated, and loved. A place where your smile matters, your feelings are heard, and your happiness is everything.</p><p>You deserve kindness on your difficult days, happiness in your everyday moments, and love that never makes you question how much you mean.</p><p>Today is Princess Day, but you deserve to feel special every single day.</p><div class="sign">With love, always ♡</div></div>
+<p class="tiny">A little note, written just for you.</p><button class="btn" onclick="go(4)">Back to the royal secrets →</button>
+</div></section>
+<section class="screen" id="p4"><div class="inner">
+<div class="script">Do You Know Why<br>You're So Special? ✨</div><p class="sub">Six little reasons, and a million more.</p>
+<div class="cards" id="reasonCards2"></div><div class="progress"><span id="cardProgress2"></span></div><div class="count" id="cardCount2">0 of 6 royal secrets revealed</div>
+<button class="btn" id="giftBtn" disabled>Unlock My Royal Surprise ♡</button>
+</div></section>
+<section class="screen" id="p5"><div class="inner">
+<div class="script">Your Princess Day<br>Gift Is Here! 🎁</div><img class="gift-art" src="heart-gift.png" alt="Pink princess piglet holding a heart gift">
+<p class="sub">A little gift wrapped with love, just for you, Tiu.</p>
+<div class="invitation"><div class="seal">💝</div><h2>A GIFT FROM THE HEART</h2><p>May you always find reasons to smile, dreams worth chasing, and people who remind you how precious you are.</p></div>
+<button class="btn" onclick="go(6)">Open Your Final Surprise →</button>
+</div></section>
+<section class="screen" id="p6"><div class="inner">
+<div class="script">My Promise to<br>You, Princess 👑</div><div class="promise-scene">👸🏻 💗 🐷</div>
+<div class="promise-card"><p>I can't promise that every day will be perfect, but I can promise to keep learning how to love you better, to make you smile, to respect your feelings, and to celebrate your happiness with you.</p>
+<label class="task"><input type="checkbox"><span>I'll Cheer for Your Dreams</span></label>
+<label class="task"><input type="checkbox"><span>I'll Respect Your Feelings</span></label>
+<label class="task"><input type="checkbox"><span>I'll Keep Choosing Kindness</span></label>
+<label class="task"><input type="checkbox"><span>I'll Remind You How Special You Are</span></label>
+</div>
+<button class="btn" onclick="go(7)">Open Your Final Surprise →</button>
+</div></section>
+<section class="screen" id="p7"><div class="inner">
+<div class="script">A Royal Hug Delivered! 💗</div><img class="final-img" src="royal-hug.png" alt="A pink princess piglet waving beside her glowing castle">
+<div class="royal">You deserve all the happiness<br>in the kingdom.</div><p class="sub">Sending the biggest royal hug to Princess Tiu. May your days be filled with laughter, little adventures, and endless love.</p>
+<button class="btn" onclick="go(8)">Back to the kingdom ♡</button>
+</div></section>
+<section class="screen" id="p8"><div class="inner">
+<div class="script">Attention, Your<br>Royal Highness… 👑</div><img class="castle-img" src="castle-gift.png" alt="A magical castle for Tiu">
+<div class="royal">Princess Tiu</div><p class="sub">Someone has a very royal surprise waiting just for you. This kingdom will always have a place for its favourite princess.</p>
+<button class="btn" onclick="restart()">Visit Your Kingdom Again ↺</button>
+</div></section>
+</main>
+<script>
+const messages=[...document.querySelectorAll('#reasonCards .reason')].map(b=>b.dataset.msg);
+let opened=new Set(),page=0;
+function makeCards(target){target.innerHTML='';[...document.querySelectorAll('#reasonCards .reason')].forEach((orig,i)=>{let b=orig.cloneNode(true);if(opened.has(i)){b.classList.add('open');b.querySelector('small').textContent=messages[i];b.querySelector('.emoji').textContent='💖'}b.addEventListener('click',()=>reveal(i,b));target.appendChild(b)})}
+makeCards(document.getElementById('reasonCards2'));
+function reveal(i,b){if(opened.has(i))return;opened.add(i);b.classList.add('open');b.querySelector('small').textContent=messages[i];b.querySelector('b').textContent=['YOUR SMILE','YOUR HEART','YOUR VIBE','YOUR PLAYFULNESS','YOUR STRENGTH','JUST YOU'][i];b.querySelector('.emoji').textContent='💖';document.querySelectorAll('#reasonCards .reason,#reasonCards2 .reason').forEach((el,j)=>{if(j%6===i){el.classList.add('open');el.querySelector('small').textContent=messages[i];el.querySelector('.emoji').textContent='💖'}});updateCards()}
+function updateCards(){let n=opened.size;['cardProgress','cardProgress2'].forEach(id=>document.getElementById(id).style.width=(n/6*100)+'%');['cardCount','cardCount2'].forEach(id=>document.getElementById(id).textContent=n+' of 6 royal secrets revealed');document.getElementById('unlockRoyal').disabled=n!==6;document.getElementById('giftBtn').disabled=n!==6}
+function go(n){if(n===1)makeCards(document.getElementById('reasonCards2'));document.querySelectorAll('.screen').forEach((s,i)=>s.classList.toggle('active',i===n));page=n;window.scrollTo({top:0,behavior:'smooth'});if(n===7)confetti(20)}
+document.getElementById('unlockRoyal').addEventListener('click',()=>go(1));
+document.getElementById('giftBtn').addEventListener('click',()=>go(5));
+document.querySelectorAll('.task input').forEach(input=>input.addEventListener('change',()=>input.parentElement.classList.toggle('done',input.checked)));
+function confetti(count){let root=document.getElementById('sparkle');for(let i=0;i<count;i++){let s=document.createElement('span');s.className='particle';s.textContent=['💗','✨','🌸','💖'][Math.floor(Math.random()*4)];s.style.left=Math.random()*100+'%';s.style.fontSize=(15+Math.random()*17)+'px';s.style.animationDuration=(4+Math.random()*3)+'s';root.appendChild(s);setTimeout(()=>s.remove(),7500)}}
+function restart(){opened.clear();document.querySelectorAll('#reasonCards .reason,#reasonCards2 .reason').forEach((b,i)=>{b.classList.remove('open');b.querySelector('small').textContent=['It can make an ordinary day feel beautiful.','Your kindness is one of your prettiest qualities.','The way you think makes everything magical.','You make even simple moments fun.','You keep growing and glowing every day.','Your little habits make you wonderfully you.'][i%6];b.querySelector('.emoji').textContent=['🌷','💗','✨','🦋','🌸','🐷'][i%6]});updateCards();document.querySelectorAll('.task input').forEach(i=>{i.checked=false;i.parentElement.classList.remove('done')});go(0)}
+</script></body></html>
