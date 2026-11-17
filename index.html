@@ -87,6 +87,10 @@ const messages=[...document.querySelectorAll('#reasonCards .reason')].map(b=>b.d
 let opened=new Set(),page=0;
 function makeCards(target){target.innerHTML='';[...document.querySelectorAll('#reasonCards .reason')].forEach((orig,i)=>{let b=orig.cloneNode(true);if(opened.has(i)){b.classList.add('open');b.querySelector('small').textContent=messages[i];b.querySelector('.emoji').textContent='💖'}b.addEventListener('click',()=>reveal(i,b));target.appendChild(b)})}
 makeCards(document.getElementById('reasonCards2'));
+/* Attach click handlers to the six cards on the opening screen too. */
+document.querySelectorAll('#reasonCards .reason').forEach((card,index)=>{
+  card.addEventListener('click',()=>reveal(index,card));
+});
 function reveal(i,b){if(opened.has(i))return;opened.add(i);b.classList.add('open');b.querySelector('small').textContent=messages[i];b.querySelector('b').textContent=['YOUR SMILE','YOUR HEART','YOUR VIBE','YOUR PLAYFULNESS','YOUR STRENGTH','JUST YOU'][i];b.querySelector('.emoji').textContent='💖';document.querySelectorAll('#reasonCards .reason,#reasonCards2 .reason').forEach((el,j)=>{if(j%6===i){el.classList.add('open');el.querySelector('small').textContent=messages[i];el.querySelector('.emoji').textContent='💖'}});updateCards()}
 function updateCards(){let n=opened.size;['cardProgress','cardProgress2'].forEach(id=>document.getElementById(id).style.width=(n/6*100)+'%');['cardCount','cardCount2'].forEach(id=>document.getElementById(id).textContent=n+' of 6 royal secrets revealed');document.getElementById('unlockRoyal').disabled=n!==6;document.getElementById('giftBtn').disabled=n!==6}
 function go(n){if(n===1)makeCards(document.getElementById('reasonCards2'));document.querySelectorAll('.screen').forEach((s,i)=>s.classList.toggle('active',i===n));page=n;window.scrollTo({top:0,behavior:'smooth'});if(n===7)confetti(20)}
